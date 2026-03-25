@@ -16,7 +16,7 @@ type Options struct {
 
 func New(opts Options) *Handler {
 	engine := gin.Default()
-	diagnosis.Init(opts.UC, engine.Group("/"))
+	diagnosis.Init(opts.UC, engine.Group("/diagnosis"))
 
 	return &Handler{
 		engine: engine,
@@ -26,4 +26,3 @@ func New(opts Options) *Handler {
 func (h *Handler) ListenAndServe() error {
 	return h.engine.Run(":8090")
 }
-

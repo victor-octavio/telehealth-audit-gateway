@@ -14,10 +14,7 @@ func Init(uc *usecases.Usecases, router *gin.RouterGroup) {
 		uc: uc,
 	}
 
-	diagnosisRouter := router.Group("/diagnosis")
-
-	diagnosisRouter.GET("/history", dh.GetHistory)
-
+	router.GET("/history", dh.GetHistory)
 }
 
 func (dh *DiagnosisHandler) Add(ctx *gin.Context) {
