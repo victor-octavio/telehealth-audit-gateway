@@ -1,4 +1,4 @@
-package diagnosis
+package models
 
 type DiagnosisRequest struct {
 	ID          string `json:"id,omitempty"`

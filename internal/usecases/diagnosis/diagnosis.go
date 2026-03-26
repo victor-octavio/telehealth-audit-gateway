@@ -1,13 +1,14 @@
 package diagnosis
 
 import (
+	models "github.com/victor-octavio/telehealth-audit-api/internal/models/diagnosis"
 	"github.com/victor-octavio/telehealth-audit-api/internal/repositories"
 )
 
 type IDiagnosis interface {
 	GetById()
 	GetHistory()
-	Add()
+	Add(req models.DiagnosisRequest) error
 }
 
 type DiagnosisImpl struct {
@@ -20,8 +21,8 @@ func New(repo *repositories.Repositories) IDiagnosis {
 	}
 }
 
-func (d *DiagnosisImpl) Add() {
-
+func (d *DiagnosisImpl) Add(req models.DiagnosisRequest) error {
+	return d.Repository.Diagnosis.Add(req)
 }
 
 func (d *DiagnosisImpl) GetHistory() {
