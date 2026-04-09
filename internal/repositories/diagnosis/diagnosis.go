@@ -1,6 +1,7 @@
 package repositories
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/hyperledger/fabric-gateway/pkg/client"
@@ -21,8 +22,20 @@ func (d *DiagnosisRepository) GetById() {
 
 }
 
-func (d *DiagnosisRepository) GetHistory() {
+func (d *DiagnosisRepository) GetHistory(ID string) ([]models.DiagnosisRequest, error) {
+	history, err := d.contract.EvaluateTransaction("GetHistory", ID)
 
+	if err != nil {
+		return nil, fmt.Errorf("error during GetHistory request")
+	}
+
+	var result []models.DiagnosisRequest
+
+	if err := json.Unmarshal(history, &result); err != nil {
+		return nil, fmt.Errorf("error during json deconding")
+	}
+
+	return result, nil
 }
 
 func (d *DiagnosisRepository) Add(req models.DiagnosisRequest) error {
@@ -33,6 +46,8 @@ func (d *DiagnosisRepository) Add(req models.DiagnosisRequest) error {
 		req.PhysicianID,
 		req.Diagnosis,
 		req.Observation,
+		"",
+		"",
 	)
 
 	if err != nil {

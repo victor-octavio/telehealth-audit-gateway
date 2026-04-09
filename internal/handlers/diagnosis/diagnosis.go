@@ -29,7 +29,8 @@ func (dh *DiagnosisHandler) Add(ctx *gin.Context) {
 	}
 
 	if err := dh.uc.Diagnosis.Add(req); err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "An error occurred during the diagnosis insertion"})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "An error occurred during the diagnosis insertion", "message": err.Error()})
+		return
 	}
 
 	ctx.JSON(http.StatusCreated, gin.H{"id": req.ID, "message": "diagnosis record created in ledger"})

@@ -9,7 +9,6 @@ import (
 	"github.com/hyperledger/fabric-gateway/pkg/identity"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/metadata"
 )
 
 type Gateway struct {
@@ -73,13 +72,11 @@ func (g *Gateway) Close() {
 
 func newGrpcConnection(cfg FabricConfig) (*grpc.ClientConn, error) {
 	// passa o authority header para o proxy do Microfab rotear corretamente
-	md := metadata.Pairs(":authority", cfg.GatewayPeer)
+	//md := metadata.Pairs(":authority", cfg.GatewayPeer)
 	return grpc.NewClient(
 		cfg.PeerEndpoint,
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
-		grpc.WithDefaultCallOptions(
-			grpc.Header(&md),
-		),
+		grpc.WithAuthority(cfg.GatewayPeer),
 	)
 }
 
