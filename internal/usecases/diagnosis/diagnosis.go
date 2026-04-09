@@ -6,8 +6,8 @@ import (
 )
 
 type IDiagnosis interface {
-	GetById()
-	GetHistory()
+	GetById(ID string) (*models.DiagnosisRequest, error)
+	GetHistory(ID string) ([]models.DiagnosisRequest, error)
 	Add(req models.DiagnosisRequest) error
 }
 
@@ -25,10 +25,10 @@ func (d *DiagnosisImpl) Add(req models.DiagnosisRequest) error {
 	return d.Repository.Diagnosis.Add(req)
 }
 
-func (d *DiagnosisImpl) GetHistory() {
-
+func (d *DiagnosisImpl) GetHistory(ID string) ([]models.DiagnosisRequest, error) {
+	return d.Repository.Diagnosis.GetHistory(ID)
 }
 
-func (d *DiagnosisImpl) GetById() {
-
+func (d *DiagnosisImpl) GetById(ID string) (*models.DiagnosisRequest, error) {
+	return d.Repository.Diagnosis.GetById(ID)
 }

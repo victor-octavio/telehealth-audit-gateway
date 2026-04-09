@@ -18,8 +18,19 @@ func New(contract *client.Contract) *DiagnosisRepository {
 	}
 }
 
-func (d *DiagnosisRepository) GetById() {
+func (d *DiagnosisRepository) GetById(ID string) (*models.DiagnosisRequest, error) {
+	record, err := d.contract.EvaluateTransaction("ReadDiagnosis", ID)
+	var result models.DiagnosisRequest
 
+	if err != nil {
+		return &models.DiagnosisRequest{}, fmt.Errorf("error during record fetch")
+	}
+
+	if err := json.Unmarshal(record, &result); err != nil {
+		return &models.DiagnosisRequest{}, fmt.Errorf("error during json deconding")
+	}
+
+	return &result, nil
 }
 
 func (d *DiagnosisRepository) GetHistory(ID string) ([]models.DiagnosisRequest, error) {

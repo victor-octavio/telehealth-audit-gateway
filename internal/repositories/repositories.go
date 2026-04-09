@@ -8,8 +8,8 @@ import (
 
 type Repositories struct {
 	Diagnosis interface {
-		GetById()
-		GetHistory()
+		GetById(ID string) (*models.DiagnosisRequest, error)
+		GetHistory(ID string) ([]models.DiagnosisRequest, error)
 		Add(req models.DiagnosisRequest) error
 	}
 }
