@@ -1,2 +1,13 @@
-go.sum
+gateway/go.sum
 
+network/wallet/
+network/fabric-env.sh
+bin/
+config/
+builders/
+*.test
+.DS_Store
+go.sum
+*.tar.gz
+chaincode/*/vendor/
+chaincode/*/go.sum

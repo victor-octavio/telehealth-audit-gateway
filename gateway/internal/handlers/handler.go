@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/victor-octavio/telehealth-audit-api/internal/handlers/diagnosis"
-	"github.com/victor-octavio/telehealth-audit-api/internal/usecases"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/handlers/diagnosis"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/usecases"
 )
 
 type Handler struct {

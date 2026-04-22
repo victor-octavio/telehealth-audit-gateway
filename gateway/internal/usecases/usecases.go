@@ -1,8 +1,8 @@
 package usecases
 
 import (
-	"github.com/victor-octavio/telehealth-audit-api/internal/repositories"
-	"github.com/victor-octavio/telehealth-audit-api/internal/usecases/diagnosis"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/repositories"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/usecases/diagnosis"
 )
 
 type Usecases struct {

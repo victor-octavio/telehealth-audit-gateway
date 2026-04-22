@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"github.com/hyperledger/fabric-gateway/pkg/client"
-	models "github.com/victor-octavio/telehealth-audit-api/internal/models/diagnosis"
-	"github.com/victor-octavio/telehealth-audit-api/internal/repositories/diagnosis"
+	models "github.com/victor-octavio/telehealth-audit-api/gateway/internal/models/diagnosis"
+	repositories "github.com/victor-octavio/telehealth-audit-api/gateway/internal/repositories/diagnosis"
 )
 
 type Repositories struct {

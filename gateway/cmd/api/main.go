@@ -1,12 +1,11 @@
 package main
 
 import (
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/handlers"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/repositories"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/usecases"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/pkg/fabric"
 	"log"
-
-	"github.com/victor-octavio/telehealth-audit-api/internal/handlers"
-	"github.com/victor-octavio/telehealth-audit-api/internal/repositories"
-	"github.com/victor-octavio/telehealth-audit-api/internal/usecases"
-	"github.com/victor-octavio/telehealth-audit-api/pkg/fabric"
 )
 
 func main() {

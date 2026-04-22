@@ -1,8 +1,8 @@
 package diagnosis
 
 import (
-	models "github.com/victor-octavio/telehealth-audit-api/internal/models/diagnosis"
-	"github.com/victor-octavio/telehealth-audit-api/internal/repositories"
+	models "github.com/victor-octavio/telehealth-audit-api/gateway/internal/models/diagnosis"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/repositories"
 )
 
 type IDiagnosis interface {

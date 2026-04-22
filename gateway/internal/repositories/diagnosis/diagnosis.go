@@ -3,9 +3,9 @@ package repositories
 import (
 	"encoding/json"
 	"fmt"
+	models "github.com/victor-octavio/telehealth-audit-api/gateway/internal/models/diagnosis"
 
 	"github.com/hyperledger/fabric-gateway/pkg/client"
-	models "github.com/victor-octavio/telehealth-audit-api/internal/models/diagnosis"
 )
 
 type DiagnosisRepository struct {

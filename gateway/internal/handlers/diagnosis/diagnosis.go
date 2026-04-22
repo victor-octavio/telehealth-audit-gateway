@@ -1,11 +1,11 @@
 package diagnosis
 
 import (
+	models "github.com/victor-octavio/telehealth-audit-api/gateway/internal/models/diagnosis"
+	"github.com/victor-octavio/telehealth-audit-api/gateway/internal/usecases"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	models "github.com/victor-octavio/telehealth-audit-api/internal/models/diagnosis"
-	"github.com/victor-octavio/telehealth-audit-api/internal/usecases"
 )
 
 type DiagnosisHandler struct {

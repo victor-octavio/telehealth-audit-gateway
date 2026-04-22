@@ -1,4 +1,4 @@
-module github.com/victor-octavio/telehealth-audit-api
+module github.com/victor-octavio/telehealth-audit-api/gateway
 
 go 1.25.5
 
