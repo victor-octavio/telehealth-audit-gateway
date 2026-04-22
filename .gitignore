@@ -1,13 +1,20 @@
-gateway/go.sum
+
+chaincode/*/vendor/
+
 
 network/wallet/
 network/fabric-env.sh
+
+# Binários do Fabric
 bin/
 config/
 builders/
-*.test
-.DS_Store
-go.sum
+
+# Gateway
+gateway/.env
+
+# Build
 *.tar.gz
-chaincode/*/vendor/
-chaincode/*/go.sum
+
+# OS
+.DS_Store
